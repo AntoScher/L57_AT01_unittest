@@ -1,5 +1,5 @@
 import unittest
-from main import add, subtract, multiply, divide, remainder
+from main import add, subtract, multiply, divide, remainder, check
 
 class TestMath(unittest.TestCase):
    def test_add(self):
@@ -42,10 +42,21 @@ class TestRemainderFunction(unittest.TestCase):
             remainder(10, 0)
         self.assertEqual(str(context.exception), "Делитель не может быть равен нулю")
 
+
     # Тест на некорректные типы данных (должно вызывать исключение)
     def test_remainder_invalid_input(self):
         with self.assertRaises(TypeError):
             remainder("10", 3)  # Передача строки вместо числа
+
+class TestCheck(unittest.TestCase):
+   def test_check(self):
+       self.assertTrue(check(2))
+       self.assertTrue(check(6))
+       self.assertTrue(check(220))
+
+       self.assertFalse(check(1))
+       self.assertFalse(check(3))
+       self.assertFalse(check(57))
 
 
 
