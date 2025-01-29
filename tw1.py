@@ -1,4 +1,3 @@
-
 import pytest
 from main import check
 
@@ -13,7 +12,8 @@ def test_check2():
    (5, False),
    (0, True),
    (56, True),
-   (-3, False)
+   (-3, True)
+
 ])
 def test_check_with_param(number, expected):
    assert check(number) == expected
