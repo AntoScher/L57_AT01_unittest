@@ -56,12 +56,11 @@ def count_vowels(input_string):
    :param input_string: Строка для анализа
    :return: Количество гласных букв в строке
    """
-   vowels = ""
+   vowels = "AEIOUaeiouАЕЁИОУЫЭЮЯаеёиоуыэюя"
    count = sum(1 for char in input_string if char in vowels)
    return count
 
 
-# Пример использования функции
 if __name__ == "__main__":
    test_string = input("Введите строку: ")
    vowel_count = count_vowels(test_string)
