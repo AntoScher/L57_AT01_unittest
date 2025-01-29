@@ -64,4 +64,7 @@ def count_vowels(input_string):
 if __name__ == "__main__":
    test_string = input("Введите строку: ")
    vowel_count = count_vowels(test_string)
+   print(f"Строка: {test_string}")
    print(f"Количество гласных букв в строке: {vowel_count}")
+   with open("input_string.txt", "w") as f:
+      f.write(test_string)
