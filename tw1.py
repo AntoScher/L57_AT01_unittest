@@ -19,7 +19,3 @@ def test_check_with_param(number, expected):
    assert check(number) == expected
 
 
-#main-new.py
-#def check(number):   return number % 2 == 0
-
-
