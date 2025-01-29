@@ -47,3 +47,22 @@ def get_user(conn, name):
    cursor = conn.cursor()
    cursor.execute('''SELECT * FROM users WHERE name=?''', (name,))
    return cursor.fetchone()
+
+
+def count_vowels(input_string):
+   """
+   Функция для подсчета гласных букв в строке.
+
+   :param input_string: Строка для анализа
+   :return: Количество гласных букв в строке
+   """
+   vowels = "AEIOUaeiouАЕЁИОУЫЭЮЯаеёиоуыэюя"
+   count = sum(1 for char in input_string if char in vowels)
+   return count
+
+
+# Пример использования функции
+if __name__ == "__main__":
+   test_string = input("Введите строку: ")
+   vowel_count = count_vowels(test_string)
+   print(f"Количество гласных букв в строке: {vowel_count}")
